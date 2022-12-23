@@ -1,0 +1,12 @@
+﻿<div class="container narrow">
+
+    <h1>Sign In</h1>
+
+    {% url 'auth_app:login' % }
+    {% include "auth_app/form.html" with form_id="sign_in" form_action=url button_text="Sign In" %}
+
+    <div class="text-center">
+        <p><a href='{% url "auth_app:register" %}'>Create an account.</a></p>
+    </div>
+
+</div>

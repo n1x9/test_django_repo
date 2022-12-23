@@ -1,0 +1,13 @@
+from django.contrib.auth import views as auth_views
+from django.urls import path
+from . import views
+
+app_name = 'hist_app'
+
+urlpatterns = [
+    # Patterns using views 
+    path("allhist/", views.HistListView.as_view(), name="list_view"),
+    path("allhist/<int:pk>", views.HistDetailView.as_view(), name="detail_view"),
+    path("allhist/add_hist/", views.HistCreateView.as_view(), name="create_view"),
+    path("allhist/edit_hist/<int:pk>", views.HistUpdateView.as_view(), name="update_view")
+]
